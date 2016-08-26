@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Row-wise tibble creation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for frame_data {tibble}"><tr><td>frame_data {tibble}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Row-wise tibble creation</h2>
+
+<h3>Description</h3>
+
+<p>Create <code><a href="tibble.html">tibble</a></code>s laying out the data in rows, rather than
+in columns. This is useful for small tables of data where readability is
+important.  Please see <a href="tibble-package.html">tibble-package</a> for a general introduction.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+frame_data(...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Arguments specifying the structure of a <code>tibble</code>.
+Variable names should be formulas, and may only appear before the data.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <code><a href="tibble.html">tibble</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+frame_data(
+  ~colA, ~colB,
+  "a",   1,
+  "b",   2,
+  "c",   3
+)
+
+# frame_data will create a list column if the value in each cell is
+# not a scalar
+frame_data(
+  ~x,  ~y,
+  "a", 1:3,
+  "b", 4:6
+)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>tibble</em> version 1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Repair object names.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for repair_names {tibble}"><tr><td>repair_names {tibble}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Repair object names.</h2>
+
+<h3>Description</h3>
+
+<p><code>repair_names</code> ensures its input has non-missing and
+unique names (duplicated names get a numeric suffix). Valid names are
+left as is.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+repair_names(x, prefix = "V", sep = "")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A named vector.</p>
+</td></tr>
+<tr valign="top"><td><code>prefix</code></td>
+<td>
+<p>A string, the prefix to use for new column names.</p>
+</td></tr>
+<tr valign="top"><td><code>sep</code></td>
+<td>
+<p>A string inserted between the column name and de-duplicating
+number.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p><code>x</code> with valid names.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+repair_names(list(3, 4, 5)) # works for lists, too
+repair_names(mtcars) # a no-op
+tbl &lt;- as_tibble(structure(list(3, 4, 5), class = "data.frame"),
+                 validate = FALSE)
+repair_names(tbl)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>tibble</em> version 1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
